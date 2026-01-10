@@ -2,98 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>vendavis apps – Everyday problems, quietly solved.</title>
+  <title>Aqualoop – Simple daily water tracker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="vendavis apps builds lean productivity and everyday apps that simplify routines and give you more time for what really matters."
+    content="Aqualoop is a simple daily water tracker for iPhone. Stay hydrated with gentle reminders, clean design and quick logging."
   />
   <style>
     :root {
-      --bg: #050816;
-      --card: #0f172a;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.12);
+      --bg: #020617;
+      --card: #020817;
+      --accent: #22d3ee;
+      --accent-soft: rgba(34, 211, 238, 0.12);
       --text: #e5e7eb;
       --muted: #9ca3af;
       --border: #1f2937;
-      --radius-lg: 16px;
-      --radius-sm: 999px;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      background: radial-gradient(circle at top, #0f172a 0, #020617 55%, #000 100%);
+      background:
+        radial-gradient(circle at top, #0f172a 0, #020617 50%, #000 100%);
       color: var(--text);
       min-height: 100vh;
       display: flex;
-      align-items: stretch;
       justify-content: center;
       padding: 32px 16px;
     }
+
     .shell {
       width: 100%;
-      max-width: 960px;
+      max-width: 880px;
       background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.08) 0, transparent 55%),
-        radial-gradient(circle at bottom right, rgba(94, 234, 212, 0.08) 0, transparent 55%),
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.10) 0, transparent 55%),
+        radial-gradient(circle at bottom right, rgba(45, 212, 191, 0.10) 0, transparent 55%),
         #020617;
       border-radius: 24px;
-      border: 1px solid rgba(148, 163, 184, 0.18);
+      border: 1px solid rgba(148, 163, 184, 0.25);
       box-shadow:
-        0 40px 120px rgba(15, 23, 42, 0.9),
+        0 32px 80px rgba(15, 23, 42, 0.9),
         0 0 0 1px rgba(15, 23, 42, 0.9);
-      padding: 24px 20px 20px;
+      padding: 24px 20px 18px;
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
+
     header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 16px;
     }
-    .brand { display: flex; align-items: center; gap: 12px; }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     .logo {
-      width: 36px;
-      height: 36px;
-      border-radius: 12px;
-      background: conic-gradient(from 210deg, #38bdf8, #22c55e, #eab308, #38bdf8);
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: conic-gradient(from 210deg, #22d3ee, #0ea5e9, #22c55e, #22d3ee);
       padding: 2px;
     }
+
     .logo-inner {
       width: 100%;
       height: 100%;
-      border-radius: 10px;
-      background: radial-gradient(circle at 30% 20%, #1e293b 0, #020617 45%);
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 20%, #0f172a 0, #020617 55%);
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 16px;
       letter-spacing: 0.06em;
-      color: #e5e7eb;
+      color: #e0f2fe;
     }
+
     .brand-text h1 {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
     }
-    .brand-text p { font-size: 12px; color: var(--muted); }
+
+    .brand-text p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
     .pill {
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(148, 163, 184, 0.3);
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.35);
       padding: 4px 10px;
       font-size: 11px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       color: var(--muted);
-      background: rgba(15, 23, 42, 0.8);
+      background: rgba(15, 23, 42, 0.9);
       white-space: nowrap;
     }
+
     .pill-dot {
       width: 7px;
       height: 7px;
@@ -101,40 +117,47 @@
       background: radial-gradient(circle at 30% 30%, #4ade80 0, #16a34a 55%, #14532d 100%);
       box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
     }
+
     main {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
       gap: 20px;
     }
+
     @media (max-width: 780px) {
       main { grid-template-columns: minmax(0, 1fr); }
       body { padding: 16px; }
       .shell { padding: 20px 16px 16px; }
     }
-    .hero-title {
-      font-size: 26px;
+
+    .title {
+      font-size: 28px;
       line-height: 1.2;
       margin-bottom: 10px;
     }
-    .hero-title span.accent {
-      background: linear-gradient(to right, #38bdf8, #22c55e);
+
+    .title span {
+      background: linear-gradient(to right, #22d3ee, #22c55e);
       -webkit-background-clip: text;
       color: transparent;
     }
-    .hero-sub {
+
+    .subtitle {
       font-size: 14px;
       color: var(--muted);
-      max-width: 460px;
       margin-bottom: 16px;
+      max-width: 460px;
     }
-    .hero-actions {
+
+    .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-bottom: 16px;
     }
+
     .btn {
-      border-radius: var(--radius-sm);
+      border-radius: var(--radius-pill);
       padding: 8px 16px;
       font-size: 13px;
       border: none;
@@ -144,24 +167,32 @@
       gap: 8px;
       text-decoration: none;
     }
+
     .btn-primary {
-      background: linear-gradient(135deg, #38bdf8, #22c55e);
+      background: linear-gradient(135deg, #22d3ee, #22c55e);
       color: #020617;
       font-weight: 600;
       box-shadow:
-        0 10px 25px rgba(56, 189, 248, 0.25),
+        0 10px 25px rgba(34, 211, 238, 0.25),
         0 0 0 1px rgba(15, 23, 42, 0.9);
     }
+
     .btn-ghost {
       background: rgba(15, 23, 42, 0.9);
       color: var(--text);
       border: 1px solid rgba(148, 163, 184, 0.4);
     }
+
     .meta {
       font-size: 11px;
       color: var(--muted);
     }
-    .meta strong { color: var(--text); font-weight: 500; }
+
+    .meta strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
     .card {
       background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9) 0, #020617 55%);
       border-radius: var(--radius-lg);
@@ -171,20 +202,12 @@
       flex-direction: column;
       gap: 10px;
     }
-    .card-title { font-size: 13px; font-weight: 600; }
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
+
+    .card-title {
+      font-size: 13px;
+      font-weight: 600;
     }
-    .tag {
-      font-size: 10px;
-      border-radius: 999px;
-      padding: 4px 8px;
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      color: var(--muted);
-      background: rgba(15, 23, 42, 0.9);
-    }
+
     .list {
       list-style: none;
       display: grid;
@@ -192,7 +215,28 @@
       font-size: 12px;
       color: var(--muted);
     }
-    .list span { color: var(--text); font-weight: 500; }
+
+    .list span {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      font-size: 10px;
+      border-radius: 999px;
+      padding: 4px 8px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
     footer {
       border-top: 1px solid rgba(15, 23, 42, 0.95);
       margin-top: 6px;
@@ -205,11 +249,12 @@
       color: var(--muted);
       flex-wrap: wrap;
     }
+
     footer a {
-      color: var(--accent);
+      color: #22d3ee;
       text-decoration: none;
-      font-size: 11px;
     }
+
     footer a:hover { text-decoration: underline; }
   </style>
 </head>
@@ -218,108 +263,99 @@
     <header>
       <div class="brand">
         <div class="logo">
-          <div class="logo-inner">VA</div>
+          <div class="logo-inner">AQ</div>
         </div>
         <div class="brand-text">
-          <h1>vendavis apps</h1>
-          <p>Everyday & productivity apps</p>
+          <h1>Aqualoop</h1>
+          <p>Simple daily water tracker for iPhone</p>
         </div>
       </div>
       <div class="pill">
         <span class="pill-dot"></span>
-        Indie iOS Development · CH
+        vendavis apps · Indie iOS
       </div>
     </header>
 
     <main>
-      <!-- Left: Intro -->
+      <!-- Left: intro -->
       <section>
-        <h2 class="hero-title">
-          Apps that quietly <span class="accent">solve everyday problems</span>.
+        <h2 class="title">
+          Stay in your <span>hydration loop</span> without thinking about it.
         </h2>
-        <p class="hero-sub">
-          vendavis apps builds lean, focused applications that automate recurring tasks,
-          simplify daily routines and give you back time for what truly matters – at work and in your personal life.
+        <p class="subtitle">
+          Aqualoop makes drinking enough water effortless. Quick logging,
+          gentle reminders and a calm design help you build a healthy daily
+          habit – without noisy gamification.
         </p>
 
-        <div class="hero-actions">
-          <a href="#apps" class="btn btn-primary">
-            View apps
+        <div class="actions">
+          <!-- Replace # with real App Store link when available -->
+          <a href="#" class="btn btn-primary">
+            Download on the App Store
           </a>
           <a href="#support" class="btn btn-ghost">
-            Support & contact
+            Support &amp; contact
           </a>
         </div>
 
         <p class="meta">
-          <strong>Focus areas:</strong> personal productivity, small business workflows,
-          and tools that reduce digital friction and mental load.
+          <strong>Available for:</strong> iPhone · iOS 17 or later
         </p>
       </section>
 
-      <!-- Right: Pillar cards -->
+      <!-- Right: feature cards -->
       <section>
         <div class="card">
-          <div class="card-title">What vendavis apps stands for</div>
+          <div class="card-title">Key features</div>
           <ul class="list">
-            <li><span>Concrete problems:</span> Every app is built around a clearly defined everyday pain point.</li>
-            <li><span>Simple to use:</span> Calm interfaces, few taps, no feature overload.</li>
-            <li><span>Respect for your time:</span> Less tapping, less searching, more done.</li>
+            <li><span>Quick logging:</span> Add a glass with one tap from a clean, distraction‑free interface.</li>
+            <li><span>Smart reminders:</span> Gentle nudges over the day – no spam, no stress.</li>
+            <li><span>Flexible goals:</span> Set your own daily target in ml or cups.</li>
+            <li><span>History overview:</span> See your last days at a glance and keep the loop going.</li>
           </ul>
         </div>
 
         <div class="card">
-          <div class="card-title">Product pillars</div>
+          <div class="card-title">Designed for real life</div>
           <ul class="list">
-            <li><span>Time & focus:</span> Keep time, tasks and attention under control.</li>
-            <li><span>Organization:</span> Structure notes, routines and small processes.</li>
-            <li><span>Work helpers:</span> Practical micro‑tools for everyday work.</li>
+            <li><span>Minimal &amp; calm:</span> No accounts, no ads, no clutter.</li>
+            <li><span>Privacy‑friendly:</span> Your hydration data stays on your device.</li>
+            <li><span>Small &amp; fast:</span> Lightweight app, optimised for everyday use.</li>
           </ul>
-          <div class="pill-row">
-            <span class="tag">iOS · App Store</span>
-            <span class="tag">Indie development</span>
-            <span class="tag">Privacy‑friendly</span>
+          <div class="tag-row">
+            <span class="tag">Hydration</span>
+            <span class="tag">Health habit</span>
+            <span class="tag">Indie app</span>
           </div>
         </div>
       </section>
     </main>
 
-    <section id="apps" class="card">
-      <div class="card-title">Apps (preview)</div>
+    <section id="support" class="card">
+      <div class="card-title">Support &amp; contact</div>
       <ul class="list">
-        <li><span>App 01 (placeholder):</span> Short description of your first app.</li>
-        <li><span>App 02 (placeholder):</span> Short description of a second app.</li>
+        <li>
+          <span>Questions or feedback?</span>
+          Send an e‑mail to
+          <a href="mailto:aqualoop.vendavis.solutions@gmail.com">
+            aqualoop.vendavis.solutions@gmail.com
+          </a>.
+        </li>
+        <li>
+          <span>Bug reports:</span>
+          Please include your iOS version and a short description of what happened.
+        </li>
       </ul>
       <p class="meta">
-        Later you can link each app to its own detail page or directly to the App Store.
-      </p>
-    </section>
-
-    <section id="support" class="card">
-      <div class="card-title">Support & contact</div>
-      <p class="hero-sub" style="margin-bottom: 8px;">
-        If you have questions, feedback or issues with one of our apps, please reach out by e‑mail.
-        We will get back to you as soon as possible.
-      </p>
-      <p class="meta">
-        E‑mail: <strong>support@vendavis-apps.example</strong> (replace with your real address)
-      </p>
-      <p class="meta">
-        You can use this page as a central support entry point or create dedicated sub‑pages per app for the App Store.
-      </p>
-      <hr style="border:none;border-top:1px solid rgba(15,23,42,0.9);margin:8px 0;" />
-      <p class="meta">
-        <strong>Deutsch:</strong> Bei Fragen, Feedback oder Problemen mit einer App kannst du uns gerne per E‑Mail kontaktieren.
-        Wir melden uns so schnell wie möglich bei dir.
+        We read every message and use your feedback to improve Aqualoop with small, focused updates.
       </p>
     </section>
 
     <footer>
-      <span>© <span id="year"></span> vendavis apps. All rights reserved.</span>
+      <span>© <span id="year"></span> vendavis apps – Aqualoop.</span>
       <span>
-        <a href="#apps">Apps</a> ·
-        <a href="#support">Support</a>
-        <!-- Optional: <a href="/privacy.html">Privacy</a> -->
+        <!-- Optional: link to a separate privacy page -->
+        <!-- <a href="privacy.html">Privacy policy</a> -->
       </span>
     </footer>
   </div>
