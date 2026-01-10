@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aqualoop – Privacy Policy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Privacy policy for Aqualoop, the simple daily water tracker for iPhone."
+  />
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #020817;
+      --accent: #22d3ee;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 50%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 800px;
+      background: #020617;
+      border-radius: 20px;
+      border: 1px solid rgba(148,163,184,0.35);
+      box-shadow:
+        0 32px 80px rgba(15,23,42,0.9),
+        0 0 0 1px rgba(15,23,42,0.9);
+      padding: 24px 20px 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-top: 18px;
+      margin-bottom: 6px;
+    }
+
+    p, li {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    ul { margin-left: 18px; margin-top: 4px; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .app-name { font-weight: 600; color: var(--text); }
+
+    footer {
+      margin-top: 18px;
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    @media (max-width: 700px) {
+      body { padding: 16px; }
+      .page { padding: 20px 16px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Privacy Policy</h1>
+      <p><span class="app-name">Aqualoop</span> – simple daily water tracker for iPhone</p>
+    </header>
+
+    <section>
+      <h2>1. Introduction</h2>
+      <p>
+        Thank you for using <span class="app-name">Aqualoop</span>. We take your privacy seriously.
+        This privacy policy explains how we handle your data.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Data collection and use</h2>
+      <p><strong>We do not collect, transmit, or store any personal data on our servers.</strong></p>
+      <p>
+        The app works entirely offline. We have no access to your personal information,
+        your location, or your usage behaviour.
+      </p>
+    </section>
+
+    <section>
+      <h2>3. Data storage</h2>
+      <p>
+        All data you enter into <span class="app-name">Aqualoop</span> (such as water entries,
+        daily goals, and settings) is stored <strong>locally on your device</strong>
+        (for example using local app storage such as AsyncStorage).
+      </p>
+      <ul>
+        <li>We do not run any servers for this app.</li>
+        <li>We do not sync your data to the cloud.</li>
+        <li>
+          If you delete the app, all of your data is permanently removed from the device.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. App permissions</h2>
+      <p>The app may request the following permission to work correctly:</p>
+      <ul>
+        <li>
+          <strong>Notifications:</strong> We use local notifications to remind you to drink
+          according to your settings. These notifications are scheduled locally on your
+          device. No data is sent to external servers to trigger these notifications.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Third‑party services</h2>
+      <p>
+        We do not use third‑party analytics services (such as Google Analytics or Firebase)
+        and we do not use any advertising networks. We do not track your behaviour inside the app.
+      </p>
+    </section>
+
+    <section>
+      <h2>6. Contact</h2>
+      <p>
+        If you have any questions about this privacy policy, please contact us at:
+      </p>
+      <p>
+        E‑mail:
+        <a href="mailto:aqualoop.vendavis.solutions@gmail.com">
+          aqualoop.vendavis.solutions@gmail.com
+        </a>
+      </p>
+    </section>
+
+    <footer>
+      <span>Last updated: <span id="date"></span></span>
+      <span>© <span id="year"></span> vendavis apps – Aqualoop</span>
+    </footer>
+  </main>
+
+  <script>
+    const now = new Date();
+    document.getElementById("year").textContent = now.getFullYear();
+    const d = String(now.getDate()).padStart(2, "0");
+    const m = String(now.getMonth() + 1).padStart(2, "0");
+    const y = now.getFullYear();
+    document.getElementById("date").textContent = `${y}-${m}-${d}`;
+  </script>
+</body>
+</html>
