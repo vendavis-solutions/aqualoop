@@ -1,367 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Aqualoop – Simple daily water tracker</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Aqualoop is a simple daily water tracker for iPhone. Stay hydrated with gentle reminders, clean design and quick logging."
-  />
-  <style>
-    :root {
-      --bg: #020617;
-      --card: #020817;
-      --accent: #22d3ee;
-      --accent-soft: rgba(34, 211, 238, 0.12);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-      --radius-lg: 18px;
-      --radius-pill: 999px;
-    }
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    <!-- Begin SEO tag -->
+    <title>Aqualoop — Support | aqualoop</title>
+    <meta name="generator" content="static" />
+    <meta property="og:title" content="Aqualoop — Support" />
+    <meta property="og:locale" content="en_US" />
+    <link rel="canonical" href="https://DEIN_USERNAME.github.io/aqualoop/" />
+    <meta property="og:url" content="https://DEIN_USERNAME.github.io/aqualoop/" />
+    <meta property="og:site_name" content="aqualoop" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Aqualoop — Support" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "headline": "Aqualoop — Support",
+        "name": "aqualoop",
+        "url": "https://DEIN_USERNAME.github.io/aqualoop/"
+      }
+    </script>
+    <!-- End SEO tag -->
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      background:
-        radial-gradient(circle at top, #0f172a 0, #020617 50%, #000 100%);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 32px 16px;
-    }
+    <!-- Falls du ein zentrales CSS hast, hier anpassen/entfernen -->
+    <link rel="stylesheet" href="/aqualoop/assets/css/style.css">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://DEIN_USERNAME.github.io/aqualoop/">aqualoop</a></h1>
 
-    .shell {
-      width: 100%;
-      max-width: 880px;
-      background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.10) 0, transparent 55%),
-        radial-gradient(circle at bottom right, rgba(45, 212, 191, 0.10) 0, transparent 55%),
-        #020617;
-      border-radius: 24px;
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      box-shadow:
-        0 32px 80px rgba(15, 23, 42, 0.9),
-        0 0 0 1px rgba(15, 23, 42, 0.9);
-      padding: 24px 20px 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+      <h1 id="aqualoop--support">Aqualoop — Support</h1>
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
+      <p>Welcome! This page provides help, FAQs, and links to our policies for the Aqualoop water tracking app.</p>
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      background: conic-gradient(from 210deg, #22d3ee, #0ea5e9, #22c55e, #22d3ee);
-      padding: 2px;
-    }
-
-    .logo-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-      background: radial-gradient(circle at 30% 20%, #0f172a 0, #020617 55%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 16px;
-      letter-spacing: 0.06em;
-      color: #e0f2fe;
-    }
-
-    .brand-text h1 {
-      font-size: 20px;
-      font-weight: 600;
-    }
-
-    .brand-text p {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .pill {
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      padding: 4px 10px;
-      font-size: 11px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--muted);
-      background: rgba(15, 23, 42, 0.9);
-      white-space: nowrap;
-    }
-
-    .pill-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #4ade80 0, #16a34a 55%, #14532d 100%);
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
-    }
-
-    main {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 20px;
-    }
-
-    @media (max-width: 780px) {
-      main { grid-template-columns: minmax(0, 1fr); }
-      body { padding: 16px; }
-      .shell { padding: 20px 16px 16px; }
-    }
-
-    .title {
-      font-size: 28px;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-
-    .title span {
-      background: linear-gradient(to right, #22d3ee, #22c55e);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .subtitle {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 16px;
-      max-width: 460px;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-
-    .btn {
-      border-radius: var(--radius-pill);
-      padding: 8px 16px;
-      font-size: 13px;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #22d3ee, #22c55e);
-      color: #020617;
-      font-weight: 600;
-      box-shadow:
-        0 10px 25px rgba(34, 211, 238, 0.25),
-        0 0 0 1px rgba(15, 23, 42, 0.9);
-    }
-
-    .btn-ghost {
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--text);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-    }
-
-    .meta {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .meta strong {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .card {
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9) 0, #020617 55%);
-      border-radius: var(--radius-lg);
-      padding: 14px 14px 12px;
-      border: 1px solid rgba(148, 163, 184, 0.32);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .card-title {
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .list {
-      list-style: none;
-      display: grid;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .list span {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 4px;
-    }
-
-    .tag {
-      font-size: 10px;
-      border-radius: 999px;
-      padding: 4px 8px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      color: var(--muted);
-      background: rgba(15, 23, 42, 0.9);
-    }
-
-    footer {
-      border-top: 1px solid rgba(15, 23, 42, 0.95);
-      margin-top: 6px;
-      padding-top: 6px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      color: var(--muted);
-      flex-wrap: wrap;
-    }
-
-    footer a {
-      color: #22d3ee;
-      text-decoration: none;
-    }
-
-    footer a:hover { text-decoration: underline; }
-  </style>
-</head>
-<body>
-  <div class="shell">
-    <header>
-      <div class="brand">
-        <div class="logo">
-          <div class="logo-inner">AQ</div>
-        </div>
-        <div class="brand-text">
-          <h1>Aqualoop</h1>
-          <p>Simple daily water tracker for iPhone</p>
-        </div>
-      </div>
-      <div class="pill">
-        <span class="pill-dot"></span>
-        vendavis apps · Indie iOS
-      </div>
-    </header>
-
-    <main>
-      <!-- Left: intro -->
-      <section>
-        <h2 class="title">
-          Stay in your <span>hydration loop</span> without thinking about it.
-        </h2>
-        <p class="subtitle">
-          Aqualoop makes drinking enough water effortless. Quick logging,
-          gentle reminders and a calm design help you build a healthy daily
-          habit – without noisy gamification.
-        </p>
-
-        <div class="actions">
-          <!-- Replace # with real App Store link when available -->
-          <a href="#" class="btn btn-primary">
-            Download on the App Store
-          </a>
-          <a href="#support" class="btn btn-ghost">
-            Support &amp; contact
-          </a>
-        </div>
-
-        <p class="meta">
-          <strong>Available for:</strong> iPhone · iOS 17 or later
-        </p>
-      </section>
-
-      <!-- Right: feature cards -->
-      <section>
-        <div class="card">
-          <div class="card-title">Key features</div>
-          <ul class="list">
-            <li><span>Quick logging:</span> Add a glass with one tap from a clean, distraction‑free interface.</li>
-            <li><span>Smart reminders:</span> Gentle nudges over the day – no spam, no stress.</li>
-            <li><span>Flexible goals:</span> Set your own daily target in ml or cups.</li>
-            <li><span>History overview:</span> See your last days at a glance and keep the loop going.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Designed for real life</div>
-          <ul class="list">
-            <li><span>Minimal &amp; calm:</span> No accounts, no ads, no clutter.</li>
-            <li><span>Privacy‑friendly:</span> Your hydration data stays on your device.</li>
-            <li><span>Small &amp; fast:</span> Lightweight app, optimised for everyday use.</li>
-          </ul>
-          <div class="tag-row">
-            <span class="tag">Hydration</span>
-            <span class="tag">Health habit</span>
-            <span class="tag">Indie app</span>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <section id="support" class="card">
-      <div class="card-title">Support &amp; contact</div>
-      <ul class="list">
-        <li>
-          <span>Questions or feedback?</span>
-          Send an e‑mail to
-          <a href="mailto:aqualoop.vendavis.solutions@gmail.com">
-            aqualoop.vendavis.solutions@gmail.com
-          </a>.
-        </li>
-        <li>
-          <span>Bug reports:</span>
-          Please include your iOS version and a short description of what happened.
-        </li>
+      <h2 id="contact">Contact</h2>
+      <ul>
+        <li>Email: <a href="mailto:vendavis.apps@proton.me">vendavis.apps@proton.me</a></li>
+        <!-- Falls du Issues auf GitHub tracken willst, Link hier aktivieren -->
+        <!-- <li>GitHub issues (bugs / feature requests): <a href="https://github.com/DEIN_USERNAME/aqualoop/issues">https://github.com/DEIN_USERNAME/aqualoop/issues</a></li> -->
       </ul>
-      <p class="meta">
-        We read every message and use your feedback to improve Aqualoop with small, focused updates.
+
+      <blockquote>
+        <p>Tip: When you contact us, please include the app name (Aqualoop), app version (see Settings → About), your device model, iOS version, and short steps to reproduce the issue.</p>
+      </blockquote>
+
+      <h2 id="quick-help--faqs">Quick Help / FAQs</h2>
+      <ul>
+        <li><strong>My daily amount does not look correct.</strong><br />
+        Check your daily goal in Settings and make sure the cup size matches what you usually drink.</li>
+
+        <li><strong>I don’t receive reminders.</strong><br />
+        Please verify that notifications for Aqualoop are allowed in iOS Settings → Notifications and that reminder times are enabled inside the app.</li>
+
+        <li><strong>Can I reset all data?</strong><br />
+        Yes. Use the reset option in Settings to clear all logged entries and start fresh.</li>
+      </ul>
+
+      <h2 id="known-issues--status">Known Issues / Status</h2>
+      <p>
+        We are continuously improving Aqualoop with small updates.  
+        If you encounter a bug that is not listed here, feel free to contact us via email so we can investigate.
       </p>
-    </section>
 
-    <footer>
-      <span>© <span id="year"></span> Vendavis Solutions – Aqualoop</span>
-      <span>
-        <!-- Optional: link to a separate privacy page -->
-        <a href="privacy.html">Privacy policy</a>
-      </span>
-    </footer>
-  </div>
+      <h2 id="data--privacy">Data &amp; Privacy</h2>
+      <p>
+        Aqualoop stores your hydration data locally on your device.  
+        No personal data is sold or shared.
+        <br />
+        Read the full policy:
+        <a href="/aqualoop/privacy.html">Privacy Policy</a>
+      </p>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
+      <!-- Optional: Terms section, falls du eigene Nutzungsbedingungen hast -->
+      <!--
+      <h2 id="terms">Terms</h2>
+      <p>Read our <a href="/aqualoop/terms.html">Terms of Use</a>.</p>
+      -->
+
+      <hr />
+
+      <p>© 2026 vendavis apps. All rights reserved.</p>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
 </html>
